@@ -43,28 +43,6 @@
         <span>H E F T Y V E R S E</span>
       </div>
     </div>
-
-    <div class="slide-track">
-      <div class="slider-item first">
-        <span>Power Leading Brand</span>
-      </div>
-      <div class="slider-item second">
-        <img
-          src="assets/images/carouselSecond.png"
-          alt="Second Image"
-          loading="lazy"
-        />
-        <span>Coindesk</span>
-      </div>
-      <div class="slider-item third">
-        <img
-          src="assets/images/carouselThird.png"
-          alt="Third Image"
-          loading="lazy"
-        />
-        <span>H E F T Y V E R S E</span>
-      </div>
-    </div>
   </div>
 </template>
 
