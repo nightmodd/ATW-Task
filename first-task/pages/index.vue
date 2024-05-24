@@ -3,5 +3,6 @@
     <Navbar />
     <ResponsiveNavbar />
     <HeroSection />
+    <InfiniteImagesCarousel />
   </div>
 </template>
