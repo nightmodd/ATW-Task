@@ -21,7 +21,10 @@ body {
   text-align: left;
   color: rgba(255, 255, 255, 1);
   font-optical-sizing: auto;
+  max-width: 1440px;
+  margin-inline: auto;
 }
+
 ol,
 ul {
   list-style: none;

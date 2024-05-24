@@ -20,6 +20,7 @@
 nav {
   position: fixed;
   top: 0;
+  max-width: 1440px;
   z-index: 90;
   width: 100%;
   display: flex;
@@ -38,7 +39,6 @@ nav {
   align-items: center;
   gap: 2.8rem;
   margin-right: 3rem;
- 
 }
 .nav-buttons {
   display: flex;
