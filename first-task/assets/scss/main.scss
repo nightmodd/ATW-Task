@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  font-weight: 500;
+  font-style: normal;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: auto;
+  min-height: 100vh;
+  background: black;
+  box-sizing: border-box;
+  text-align: left;
+  color: rgba(255, 255, 255, 1);
+  font-optical-sizing: auto;
+}
