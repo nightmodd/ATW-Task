@@ -21,6 +21,11 @@
       alt="KattyEfa NFT"
       :reverse="true"
     />
-    <CollectionsSection />
+    <CollectionsSection variant="detailed" :characters="characters" />
+   <!--  <CollectionsSection variant="promo" :characters="characters" /> -->
   </div>
 </template>
+
+<script setup lang="ts">
+import { characters } from "~/data";
+</script>
