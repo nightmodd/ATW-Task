@@ -21,5 +21,6 @@
       alt="KattyEfa NFT"
       :reverse="true"
     />
+    <CollectionsSection />
   </div>
 </template>

@@ -5,7 +5,6 @@ export default defineNuxtConfig({
       title: "ATW Task1", // Set your default title here
     },
   },
-  css: ['@/assets/scss/main.scss'],
+  css: ["@/assets/scss/main.scss"],
   devtools: { enabled: true },
-  
 });
