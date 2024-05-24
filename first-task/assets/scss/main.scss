@@ -21,3 +21,15 @@ body {
   color: rgba(255, 255, 255, 1);
   font-optical-sizing: auto;
 }
+ol,
+ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
