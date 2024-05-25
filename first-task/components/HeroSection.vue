@@ -7,13 +7,19 @@
         digital assets. Create and run an exclusive marketplace for your NFT
         business today!
       </p>
-      <form>
+      <form @submit.prevent="submitForm">
         <input type="text" placeholder="Enter your email....." />
-        <button>Start Free</button>
+        <button type="submit">Start Free</button>
       </form>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+const submitForm = () => {
+  alert("Thanks For your Subscribing to our newsletter");
+};
+</script>
 
 <style scoped lang="scss">
 .hero-section {
@@ -26,6 +32,7 @@
   justify-content: center;
   align-items: center;
   z-index: 10;
+
   &::before {
     content: "";
     position: absolute;
@@ -36,6 +43,7 @@
     background: rgba(0, 0, 0, 0.5);
   }
 }
+
 .hero-content {
   position: relative;
   display: flex;
@@ -46,11 +54,13 @@
   align-items: center;
   text-align: center;
   gap: 2rem;
+
   span {
     font-size: 3rem;
     font-weight: 700;
     line-height: 72px;
   }
+
   p {
     max-width: 500px;
     margin: auto;
@@ -58,11 +68,13 @@
     font-weight: 400;
     line-height: 24px;
   }
+
   form {
     display: flex;
     max-width: 400px;
     margin: auto;
     gap: 0.5rem;
+
     input {
       padding: 0.5rem 1rem;
       min-width: 272px;
@@ -71,6 +83,7 @@
       border-radius: 1rem;
       border: none;
     }
+
     button {
       background: #52057b;
       color: #ffff;
@@ -78,31 +91,8 @@
       padding: 0.5rem 1rem;
       border: none;
     }
-  }
-}
-@media only screen and (max-width: 46.875rem) {
-  .hero-content {
-    width: 80%;
-    span {
-      font-size: 2.5rem;
-      line-height: 48px;
-    }
-    p {
-      width: 90%;
-    }
-  }
-}
-@media only screen and (max-width: 34.375rem) {
-  .hero-content {
-    width: 90%;
-    span {
-      font-size: 2rem;
-    }
-  }
-}
-@media only screen and (max-width: 34.375rem) {
-  .hero-content {
-    form {
+
+    @media only screen and (max-width: 34.375rem) {
       position: relative;
       flex-direction: column;
       align-items: center;
@@ -114,6 +104,24 @@
       button {
         max-width: 50%;
       }
+    }
+  }
+
+  @media only screen and (max-width: 46.875rem) {
+    width: 80%;
+    span {
+      font-size: 2.5rem;
+      line-height: 48px;
+    }
+    p {
+      width: 90%;
+    }
+  }
+
+  @media only screen and (max-width: 34.375rem) {
+    width: 90%;
+    span {
+      font-size: 2rem;
     }
   }
 }

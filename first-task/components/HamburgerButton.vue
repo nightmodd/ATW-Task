@@ -47,6 +47,7 @@ const ToggleMenu = () => {
   cursor: pointer;
   overflow: hidden;
 }
+
 .line {
   display: block;
   width: 35px;
@@ -58,12 +59,14 @@ const ToggleMenu = () => {
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
+
 .hamburger.is-active .line:nth-child(1) {
   -webkit-transform: translateX(-80%);
   -ms-transform: translateX(-80%);
   -o-transform: translateX(-80%);
   transform: translateX(-80%);
 }
+
 .menu-span {
   position: relative;
   height: 100%;
@@ -78,6 +81,7 @@ const ToggleMenu = () => {
     transition: opacity 0.3s ease;
   }
 }
+
 .menu-span span.active {
   opacity: 1;
 }

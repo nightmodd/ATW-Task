@@ -63,6 +63,7 @@
   gap: 8.5rem;
   animation: 35s scroll infinite linear;
 }
+
 .slider-item {
   width: fit-content;
   height: fit-content;
@@ -71,9 +72,11 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+
   img {
     width: 48px;
   }
+
   span {
     font-size: 32px;
     font-weight: 400;

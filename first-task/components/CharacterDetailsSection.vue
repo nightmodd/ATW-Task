@@ -57,10 +57,21 @@ const props = defineProps({
   align-items: center;
   gap: 3rem;
   border-bottom: 8px solid #816797;
+
+  @media only screen and (max-width: 87.5rem) {
+    padding: 6.25rem 6rem;
+  }
+
+  @media only screen and (max-width: 78.125rem) {
+    padding: 6.25rem 4rem;
+    gap: 2rem;
+  }
 }
+
 .reverse {
   flex-direction: row-reverse;
 }
+
 .details-description {
   max-width: 470px;
   display: flex;
@@ -69,7 +80,25 @@ const props = defineProps({
   font-weight: 400;
   line-height: 48px;
   text-align: left;
+
+  @media only screen and (max-width: 78.125rem) {
+    font-size: 2.7vw;
+    line-height: 32px;
+  }
+
+  @media only screen and (max-width: 62.5rem) {
+    font-size: 3vw;
+  }
+
+  @media only screen and (max-width: 43.75rem) {
+    font-size: 3.3vw;
+  }
+
+  @media only screen and (max-width: 37.5rem) {
+    font-size: 24px;
+  }
 }
+
 button {
   margin-top: 1rem;
   width: fit-content;
@@ -83,39 +112,17 @@ button {
     height: 1.5rem;
   }
 }
+
 .character-image {
   width: 39vw;
+
+  @media only screen and (max-width: 43.75rem) {
+    .character-image {
+      width: 44vw;
+    }
+  }
 }
 
-@media only screen and (max-width: 87.5rem) {
-  .character-details-container {
-    padding: 6.25rem 6rem;
-  }
-}
-
-@media only screen and (max-width: 78.125rem) {
-  .character-details-container {
-    padding: 6.25rem 4rem;
-    gap: 2rem;
-  }
-  .details-description {
-    font-size: 2.7vw;
-    line-height: 32px;
-  }
-}
-@media only screen and (max-width: 62.5rem) {
-  .details-description {
-    font-size: 3vw;
-  }
-}
-@media only screen and (max-width: 43.75rem) {
-  .details-description {
-    font-size: 3.3vw;
-  }
-  .character-image {
-    width: 44vw;
-  }
-}
 @media only screen and (max-width: 37.5rem) {
   .character-details-container {
     flex-direction: column;
@@ -125,12 +132,6 @@ button {
   }
   .character-image {
     width: 100%;
-  }
-}
-
-@media only screen and (max-width: 37.5rem) {
-  .details-description {
-    font-size: 24px;
   }
 }
 </style>
