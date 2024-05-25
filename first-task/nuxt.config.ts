@@ -5,6 +5,14 @@ export default defineNuxtConfig({
       title: "ATW Task1", // Set your default title here
     },
   },
+
   css: ["@/assets/scss/main.scss"],
-/*   devtools: { enabled: true }, */
+  modules: ["@nuxtjs/google-fonts"],
+  googleFonts: {
+    families: {
+      Poppins: [300, 400, 500, 600, 700],
+    },
+    download: true,
+    display: "swap",
+  },
 });
