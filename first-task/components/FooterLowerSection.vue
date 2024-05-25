@@ -6,7 +6,7 @@
         The Leading No-code NFT Marketplace Solution</span
       >
       <ul class="icons">
-        <li v-for="image in images">
+        <li v-for="image in images" :key="image">
           <button>
             <a href="#"><img :src="image" :alt="image" /></a>
           </button>

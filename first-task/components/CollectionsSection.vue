@@ -10,11 +10,11 @@
       <button v-if="!activeLoop" class="category-button">View Category</button>
     </div>
     <div class="collection-slider">
-      <CustomSwiper :activeLoop="activeLoop" :variant="variant">
+      <CustomSwiper :active-loop="activeLoop" :variant="variant">
         <div
-          class="swiper-slide"
           v-for="character in characters"
           :key="character.name"
+          class="swiper-slide"
         >
           <div
             :class="{
@@ -25,7 +25,7 @@
             <img :src="`${character.img}`" alt="character" />
             <div class="character-info">
               <span class="character-name">{{ character.name }}</span>
-              <span class="character-floor" v-if="variant === 'detailed'"
+              <span v-if="variant === 'detailed'" class="character-floor"
                 >FLOOR: {{ character.floor }}</span
               >
             </div>
@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-import { type Character } from "~/data";
+import type { Character } from "~/types";
 
 defineProps<{
   variant: "promo" | "detailed";

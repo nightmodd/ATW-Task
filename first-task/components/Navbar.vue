@@ -9,8 +9,8 @@
         <li><a href="#cart">Cart</a></li>
       </ul>
       <ul class="nav-buttons">
-        <button  class="login-btn">Login</button>
-        <button  class="signup-btn">Sign Up</button>
+        <button class="login-btn">Login</button>
+        <button class="signup-btn">Sign Up</button>
       </ul>
     </div>
   </nav>

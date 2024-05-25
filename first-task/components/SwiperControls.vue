@@ -1,18 +1,18 @@
 <template>
-  <button class="swiper-next-button" @click="$emit('slideNext')" v-if="!isEnd">
+  <button v-if="!isEnd" class="swiper-next-button" @click="$emit('slideNext')">
     <img src="/public/images/whiteArrow.svg" alt="arrow" />
   </button>
   <button
+    v-if="!isBeginning"
     class="swiper-prev-button"
     @click="$emit('slidePrev')"
-    v-if="!isBeginning"
   >
     <img src="/public/images/whiteArrow.svg" alt="arrow" />
   </button>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   isBeginning: boolean;
   isEnd: boolean;
 }>();

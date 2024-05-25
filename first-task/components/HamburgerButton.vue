@@ -1,14 +1,14 @@
 <template>
   <button class="menu-btn" @click="ToggleMenu">
     <div
+      id="hamburger"
       :class="{
         hamburger: true,
         'is-active': isActive,
       }"
-      id="hamburger"
     >
-      <span class="line"></span>
-      <span class="line"></span>
+      <span class="line" />
+      <span class="line" />
     </div>
     <div
       :class="{
@@ -23,7 +23,7 @@
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{
+defineProps<{
   isActive: boolean;
 }>();
 const emit = defineEmits(["toggle-menu"]);

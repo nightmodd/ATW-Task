@@ -1,7 +1,7 @@
 <template>
   <div class="footer-list">
     <span class="footer-list__title">{{ listTitle }}</span>
-    <ul v-for="item in listItems">
+    <ul v-for="item in listItems" :key="item">
       <li class="footer-list__item">{{ item }}</li>
     </ul>
   </div>
@@ -21,7 +21,7 @@ defineProps<{
   gap: 1.75rem;
   text-align: left;
   color: #fff;
-  ul{
+  ul {
     width: fit-content;
   }
 }

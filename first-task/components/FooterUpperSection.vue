@@ -19,10 +19,10 @@
         </button>
       </div>
       <div class="footer-lists-container">
-        <FooterList :listTitle="listsTitle[0]" :listItems="featuresList" />
-        <FooterList :listTitle="listsTitle[1]" :listItems="serviesList" />
-        <FooterList :listTitle="listsTitle[2]" :listItems="productList" />
-        <FooterList :listTitle="listsTitle[3]" :listItems="resoursesList" />
+        <FooterList :list-title="listsTitle[0]" :list-items="featuresList" />
+        <FooterList :list-title="listsTitle[1]" :list-items="serviesList" />
+        <FooterList :list-title="listsTitle[2]" :list-items="productList" />
+        <FooterList :list-title="listsTitle[3]" :list-items="resoursesList" />
       </div>
     </div>
   </div>

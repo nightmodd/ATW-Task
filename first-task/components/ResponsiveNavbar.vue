@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <HamburgerButton @toggle-menu="handleToggleMenu" :isActive="isActive" />
+    <HamburgerButton :is-active="isActive" @toggle-menu="handleToggleMenu" />
     <img src="@/assets/images/logo.png" alt="logo" />
   </nav>
   <ul

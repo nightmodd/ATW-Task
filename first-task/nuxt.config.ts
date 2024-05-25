@@ -7,12 +7,15 @@ export default defineNuxtConfig({
   },
 
   css: ["@/assets/scss/main.scss"],
-  modules: ["@nuxtjs/google-fonts"],
+  modules: ["@nuxtjs/google-fonts", "@nuxt/eslint"],
   googleFonts: {
     families: {
       Poppins: [300, 400, 500, 600, 700],
     },
     download: true,
     display: "swap",
+  },
+  eslint: {
+    checker: true, // <---
   },
 });

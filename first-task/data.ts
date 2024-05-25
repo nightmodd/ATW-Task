@@ -1,8 +1,4 @@
-export interface Character {
-  name: string;
-  floor: string;
-  img: string;
-}
+import type { Character } from "./types";
 
 export const characters: Character[] = [
   {

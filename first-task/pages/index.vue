@@ -1,37 +1,37 @@
 <template>
   <div>
-    <Navbar />
+    <NavBar />
     <ResponsiveNavbar />
     <HeroSection />
     <InfiniteImagesCarousel />
     <CharacterDetailsSection
       title="Moddy Character NFT"
-      characterDescription="The image is a high-quality digital painting with a resolution of 3000x2000 pixels and is optimized for the web."
+      character-description="The image is a high-quality digital painting with a resolution of 3000x2000 pixels and is optimized for the web."
       price="$101,593"
-      imageSrc="images/firstCharacter.png"
+      image-src="images/firstCharacter.png"
       alt="Moddy Character NFT"
       :reverse="false"
     />
     <CharacterDetailsSection
       title="KattyEfa NFT"
-      characterDescription="The image is a high-quality digital painting with a
+      character-description="The image is a high-quality digital painting with a
     resolution of 5000x1250 pixels ."
       price="$1.5 million"
-      imageSrc="images/secondCharacter.png"
+      image-src="images/secondCharacter.png"
       alt="KattyEfa NFT"
       :reverse="true"
     />
     <CollectionsSection
       variant="detailed"
       :characters="characters"
-      sectionTitle="Collections"
-      :activeLoop="true"
+      section-title="Collections"
+      :active-loop="true"
     />
     <CollectionsSection
       variant="promo"
       :characters="promoCharacters"
-      sectionTitle="Trending in Photography"
-      :activeLoop="false"
+      section-title="Trending in Photography"
+      :active-loop="false"
     />
     <FooterSection />
   </div>

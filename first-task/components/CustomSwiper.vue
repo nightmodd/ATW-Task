@@ -10,10 +10,10 @@
         <slot></slot>
       </div>
     </div>
-    <div class="prev-arrow" @click="handlePrev" ref="prevArrow">
+    <div ref="prevArrow" class="prev-arrow" @click="handlePrev">
       <img src="/public/images/whiteArrow.svg" alt="arrow" />
     </div>
-    <div class="next-arrow" @click="handleNext" ref="nextArrow">
+    <div ref="nextArrow" class="next-arrow" @click="handleNext">
       <img src="/public/images/whiteArrow.svg" alt="arrow" />
     </div>
   </div>
@@ -24,13 +24,13 @@ import { ref } from "vue";
 import { Swiper } from "swiper";
 import { Autoplay, Navigation } from "swiper/modules";
 
-Swiper.use([Navigation]);
-Swiper.use([Autoplay]);
-
 import "swiper/css";
 import "swiper/css/scrollbar";
 
-const sliderRef = ref<any>(null);
+Swiper.use([Navigation]);
+Swiper.use([Autoplay]);
+
+const sliderRef = ref<HTMLDivElement | null>(null);
 const sliderInstanceRef = ref<Swiper | null>(null);
 const nextArrow = ref<HTMLElement | null>(null);
 const prevArrow = ref<HTMLElement | null>(null);
@@ -42,7 +42,7 @@ const props = defineProps<{
 
 onMounted(() => {
   if (props.variant === "detailed") {
-    const swiperInstance = new Swiper(sliderRef.value, {
+    const swiperInstance = new Swiper(sliderRef.value!, {
       slidesPerView: 1,
       loop: props.activeLoop,
       spaceBetween: 20,
@@ -64,7 +64,7 @@ onMounted(() => {
     });
     sliderInstanceRef.value = swiperInstance;
   } else if (props.variant === "promo") {
-    const swiperInstance = new Swiper(sliderRef.value, {
+    const swiperInstance = new Swiper(sliderRef.value!, {
       slidesPerView: 1,
       loop: props.activeLoop,
       spaceBetween: 20,
