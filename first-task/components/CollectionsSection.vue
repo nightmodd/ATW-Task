@@ -11,7 +11,7 @@
       <button v-if="!activeLoop" class="category-button">View Category</button>
     </div>
     <div class="collection-slider">
-      <CustomSwiper :activeLoop="activeLoop">
+      <CustomSwiper :activeLoop="activeLoop" :variant="variant">
         <div
           class="swiper-slide"
           v-for="character in characters"
@@ -99,7 +99,7 @@ defineProps<{
     line-height: 36px;
     text-align: center;
     color: #fff;
-    background: #52057B;
+    background: #52057b;
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     border: none;

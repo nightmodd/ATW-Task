@@ -1,5 +1,10 @@
 <template>
-  <div class="swiper_container">
+  <div
+    :class="{
+      'swiper-container-detailed': variant === 'detailed',
+      'swiper-container-promo': variant === 'promo',
+    }"
+  >
     <div ref="sliderRef" class="swiper overflow-x-hidden">
       <div class="swiper-wrapper">
         <slot></slot>
@@ -32,31 +37,52 @@ const prevArrow = ref<HTMLElement | null>(null);
 
 const props = defineProps<{
   activeLoop: boolean;
+  variant: "detailed" | "promo";
 }>();
 
 onMounted(() => {
-  const swiperInstance = new Swiper(sliderRef.value, {
-    slidesPerView: 1,
-    loop: props.activeLoop,
-    spaceBetween: 20,
-    navigation: {
-      nextEl: nextArrow.value,
-      prevEl: prevArrow.value,
-    },
-    breakpoints: {
-      550: {
-        slidesPerView: 2,
+  if (props.variant === "detailed") {
+    const swiperInstance = new Swiper(sliderRef.value, {
+      slidesPerView: 1,
+      loop: props.activeLoop,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: nextArrow.value,
+        prevEl: prevArrow.value,
       },
-      1024: {
-        slidesPerView: 3,
+      breakpoints: {
+        550: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+        1440: {
+          slidesPerView: 4,
+        },
       },
-      1440: {
-        slidesPerView: 4,
+    });
+    sliderInstanceRef.value = swiperInstance;
+  } else if (props.variant === "promo") {
+    const swiperInstance = new Swiper(sliderRef.value, {
+      slidesPerView: 1,
+      loop: props.activeLoop,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: nextArrow.value,
+        prevEl: prevArrow.value,
       },
-    },
-  });
-
-  sliderInstanceRef.value = swiperInstance;
+      breakpoints: {
+        550: {
+          slidesPerView: 2,
+        },
+        1024: {
+          slidesPerView: 3,
+        },
+      },
+    });
+    sliderInstanceRef.value = swiperInstance;
+  }
 });
 
 const handlePrev = () => {
@@ -69,7 +95,7 @@ const handleNext = () => {
 </script>
 
 <style lang="scss" scoped>
-.swiper_container {
+.swiper-container-detailed {
   margin: auto;
   width: calc(100% - 100px);
   height: 320px;
@@ -79,6 +105,10 @@ const handleNext = () => {
     margin-inline: auto;
     width: 95%;
   }
+}
+.swiper-container-promo {
+  @extend .swiper-container-detailed;
+  height: 400px;
 }
 
 .swiper {
