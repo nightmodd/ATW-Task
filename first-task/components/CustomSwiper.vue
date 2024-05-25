@@ -109,9 +109,21 @@ const handleNext = () => {
   justify-content: center;
   border-radius: 50%;
   cursor: pointer;
+  @media only screen and (max-width: 78.125rem) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media only screen and (max-width: 900px) {
+    width: 50px;
+    height: 50px;
+  }
 
   img {
     width: 40px;
+    @media only screen and (max-width: 900px) {
+      width: 30px;
+    }
   }
 
   @media only screen and (max-width: 34.375rem) {
@@ -120,11 +132,11 @@ const handleNext = () => {
 }
 
 .next-arrow {
-  right: -30px;
+  right: -25px;
 }
 
 .prev-arrow {
-  left: -30px;
+  left: -25px;
   transform: translateY(-50%) rotate(180deg);
 }
 

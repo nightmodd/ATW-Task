@@ -21,11 +21,21 @@
       alt="KattyEfa NFT"
       :reverse="true"
     />
-    <CollectionsSection variant="detailed" :characters="characters" />
-   <!--  <CollectionsSection variant="promo" :characters="characters" /> -->
+    <CollectionsSection
+      variant="detailed"
+      :characters="characters"
+      sectionTitle="Collections"
+      :activeLoop="true"
+    />
+    <CollectionsSection
+      variant="promo"
+      :characters="promoCharacters"
+      sectionTitle="Trending in Photography"
+      :activeLoop="false"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-import { characters } from "~/data";
+import { characters, promoCharacters } from "~/data";
 </script>

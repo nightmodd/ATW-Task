@@ -6,9 +6,12 @@
       'collection-detailed-section': variant === 'detailed',
     }"
   >
-    <h2 class="section-title">Collections</h2>
+    <div class="section-header">
+      <h2 class="section-title">{{ sectionTitle }}</h2>
+      <button v-if="!activeLoop" class="category-button">View Category</button>
+    </div>
     <div class="collection-slider">
-      <CustomSwiper :activeLoop="true">
+      <CustomSwiper :activeLoop="activeLoop">
         <div
           class="swiper-slide"
           v-for="character in characters"
@@ -40,6 +43,8 @@ import { type Character } from "~/data";
 defineProps<{
   variant: "promo" | "detailed";
   characters: Character[];
+  sectionTitle: string;
+  activeLoop: boolean;
 }>();
 </script>
 
@@ -53,20 +58,51 @@ defineProps<{
   height: fit-content;
   display: flex;
   flex-direction: column;
+  .section-header {
+    display: flex;
+    margin: 0rem 9.375rem;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3.125rem;
+    max-width: 75rem;
+
+    @media screen and (max-width: 68.75rem) {
+      margin: 0rem 5rem;
+      margin-bottom: 3.125rem;
+    }
+
+    @media screen and (max-width: 62.5rem) {
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    @media screen and (max-width: 34.375rem) {
+      margin: 0rem 2rem;
+      margin-bottom: 3.125rem;
+    }
+  }
 
   .section-title {
-    margin-bottom: 3rem;
-    margin-left: 9.375rem;
     font-size: 40px;
     font-weight: 700;
     line-height: 60px;
     text-align: left;
-    @media screen and (max-width: 53.125rem) {
-      margin-left: 5rem;
-    }
     @media screen and (max-width: 34.375rem) {
-      margin-left: 2rem;
+      font-size: 32px;
+      line-height: 50px;
     }
+  }
+  .category-button {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+    background: #52057B;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: none;
   }
 }
 
@@ -86,7 +122,7 @@ defineProps<{
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
-    border: 3px solid #52057b;
+    border: 2px solid #52057b;
   }
 
   .character-info {
@@ -119,6 +155,9 @@ defineProps<{
 
 .promo-character-card {
   @extend .detailed-character-card;
+  img {
+    border: 1px solid #816797;
+  }
 
   .character-info {
     background: #816797;
@@ -127,9 +166,8 @@ defineProps<{
 
 .collection-promo-section {
   .collection-slider {
-    max-width: 1070px;
+    max-width: 78.125rem;
     margin-inline: auto;
-
     @media only screen and (max-width: 78.125rem) {
       width: 100%;
     }
