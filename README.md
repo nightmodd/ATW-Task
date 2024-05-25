@@ -1,75 +1,80 @@
-# Nuxt 3 Minimal Starter
+# ATW-Task
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This app is build with Nuxt3, Typescript, Sass, Swiper
 
-## Setup
+> This project is hosted at
+> [https://atw-task-mostafa-esmail.netlify.app/](https://atw-task-mostafa-esmail.netlify.app/) 
+for design task and on [https://atw-task-mostafa-esmail.netlify.app/todos](https://atw-task-mostafa-esmail.netlify.app/todos) 
+for the second task (fetch from any API)
 
-Make sure to install the dependencies:
+## Table of Contents
+- [ATW-Task](#atw-task)
+  - [Table of Contents](#table-of-contents)
+  - [Getting Started](#getting-started)
+  - [Technology Stack \& Decisions](#technology-stack--decisions)
+  - [Features](#features)
+  - [Development Environment Tools](#development-environment-tools)
 
-```bash
-# npm
-npm install
+## Getting Started
 
-# pnpm
-pnpm install
+1. Clone repo
+2. `npm install` or `pnpm install` or `yarn install`
 
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+Then run the following commands as needed:
 
 ```bash
-# npm
-npm run dev
+# development, building, and testing
+npm run dev # dev server
+npm run build # build for production
+npm run generate # build Static site
 
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
+# linting, style checking, and type checking
+npm run lint # for check errors
+npm run lint:fix # for fixing errors
 ```
 
-## Production
+## Technology Stack & Decisions
 
-Build the application for production:
+Technical decisions in the real world would depend on requirements and the
+available time-frame.
 
-```bash
-# npm
-npm run build
+- **Vue/Nuxt3**: Required, but I'm also familiar with SolidJS, Next.
+- **TypeScript**: Bonus, but is my default choice nonetheless.
+- **Sass**: Personal preference and requirements don't force me to go for more sophisticated options. 
+  
+> The API does not provide pagination so I implemented virtual pagination to optimize rendering performance
 
-# pnpm
-pnpm run build
 
-# yarn
-yarn build
+## Features
 
-# bun
-bun run build
-```
+**Required**:
 
-Locally preview production build:
+- [x] Fetch from given API
+- [x] Create my own design for task 2 (fetch from API)
+- [x] Sliders using SwiperJS
 
-```bash
-# npm
-npm run preview
 
-# pnpm
-pnpm run preview
 
-# yarn
-yarn preview
 
-# bun
-bun run preview
-```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+**Extras**:
+- [x] Use TypeScript
+- [x] Responsive design
+- [x] Added filter for 2nd task 
+- [x] Made virtual pagination
+- [x] Completed tasks are marked accordingly  
+
+
+
+## Development Environment Tools
+
+- ESLint
+- Prettier
+
+
+
+
+
+
+

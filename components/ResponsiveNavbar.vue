@@ -10,16 +10,16 @@
     }"
   >
     <li>
-      <a href="#home" @click="handleToggleMenu">Home</a>
+      <NuxtLink to="/" @click="handleToggleMenu">Home</NuxtLink>
     </li>
     <li>
-      <a href="#about" @click="handleToggleMenu">About</a>
+      <NuxtLink to="/" @click="handleToggleMenu">About</NuxtLink>
     </li>
     <li>
-      <a href="#blog" @click="handleToggleMenu">Blog</a>
+      <NuxtLink to="/" @click="handleToggleMenu">Blog</NuxtLink>
     </li>
     <li>
-      <a href="#cart" @click="handleToggleMenu">Cart</a>
+      <NuxtLink to="/todos" @click="handleToggleMenu">Todos</NuxtLink>
     </li>
   </ul>
 </template>

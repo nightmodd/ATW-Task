@@ -3,10 +3,10 @@
     <img src="@/assets/images/logo.png" alt="logo" />
     <div class="navbar">
       <ul class="nav-list">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#cart">Cart</a></li>
+        <li><NuxtLink to="/">Home</NuxtLink></li>
+        <li><NuxtLink to="/">About</NuxtLink></li>
+        <li><NuxtLink to="/">Blog</NuxtLink></li>
+        <li><NuxtLink to="/todos">Todos</NuxtLink></li>
       </ul>
       <ul class="nav-buttons">
         <button class="login-btn">Login</button>
