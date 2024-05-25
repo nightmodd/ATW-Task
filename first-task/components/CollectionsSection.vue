@@ -1,9 +1,8 @@
 <template>
   <div
-    class="collection-section"
     :class="{
-      'collection-promo-section': variant === 'promo',
-      'collection-detailed-section': variant === 'detailed',
+      'promo-collection-section': variant === 'promo',
+      'detailed-collection-section': variant === 'detailed',
     }"
   >
     <div class="section-header">
@@ -49,7 +48,7 @@ defineProps<{
 </script>
 
 <style lang="scss" scoped>
-.collection-section {
+.detailed-collection-section {
   position: relative;
   width: 100%;
   padding-top: 3.125rem;
@@ -104,6 +103,18 @@ defineProps<{
     border-radius: 1rem;
     border: none;
     cursor: pointer;
+  }
+}
+
+.promo-collection-section {
+  @extend .detailed-collection-section;
+  border-bottom: none;
+  .collection-slider {
+    max-width: 78.125rem;
+    margin-inline: auto;
+    @media only screen and (max-width: 78.125rem) {
+      width: 100%;
+    }
   }
 }
 
@@ -162,16 +173,6 @@ defineProps<{
 
   .character-info {
     background: #816797;
-  }
-}
-
-.collection-promo-section {
-  .collection-slider {
-    max-width: 78.125rem;
-    margin-inline: auto;
-    @media only screen and (max-width: 78.125rem) {
-      width: 100%;
-    }
   }
 }
 </style>

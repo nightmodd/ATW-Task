@@ -33,6 +33,7 @@
       sectionTitle="Trending in Photography"
       :activeLoop="false"
     />
+    <FooterSection />
   </div>
 </template>
 
