@@ -103,6 +103,7 @@ defineProps<{
     padding: 0.5rem 1rem;
     border-radius: 1rem;
     border: none;
+    cursor: pointer;
   }
 }
 
