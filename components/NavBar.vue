@@ -27,7 +27,7 @@ nav {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 9rem;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.75);
 }
 .navbar {
   display: flex;

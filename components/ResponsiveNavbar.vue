@@ -48,7 +48,7 @@ nav,
     align-items: center;
     width: 100%;
     padding: 1rem 2rem;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     z-index: 100;
   }
   .drop-down {
@@ -61,7 +61,7 @@ nav,
     width: 100%;
     height: fit-content;
     height: -moz-fit-content;
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.75);
     gap: 1rem;
     transform: translateY(-200%);
     transition: all 0.3s ease-in-out;
