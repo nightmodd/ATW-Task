@@ -20,8 +20,10 @@
         >Uncompleted</CustomButton
       >
     </div>
-
-    <div class="todos-container">
+    <div class="loader-container">
+      <LoadingAnimation v-if="state !== 'completed'" />
+    </div>
+    <div v-if="state === 'completed'" class="todos-container">
       <TodosGrid :todos="filteredTodos" />
       <CustomButton @click="() => showMore()">Show more</CustomButton>
     </div>
@@ -108,8 +110,11 @@ onMounted(() => {
     flex-direction: column;
     width: fit-content;
     margin-inline: auto;
-    
   }
+}
+.loader-container {
+  display: flex;
+  justify-content: center;
 }
 
 .todos-container {
