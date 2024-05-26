@@ -25,7 +25,9 @@
     </div>
     <div v-if="state === 'completed'" class="todos-container">
       <TodosGrid :todos="filteredTodos" />
-      <CustomButton @click="() => showMore()">Show more</CustomButton>
+      <CustomButton @click="() => showMore()" :disabled="disableShowMore"
+        >Show more</CustomButton
+      >
     </div>
   </div>
 </template>
@@ -39,6 +41,8 @@ const todos = ref<Todo[] | null>(null);
 const activeFilter = ref<Filter>("all");
 const state = ref<"loading" | "error" | "completed">("loading");
 const page = ref(1);
+const maxItems = ref(0);
+const disableShowMore = ref(false);
 
 const API_URL = "https://jsonplaceholder.typicode.com/todos";
 const PER_PAGE = 10;
@@ -74,26 +78,41 @@ async function loadTodos() {
 const setFilter = (filter: "all" | "completed" | "uncompleted") => {
   activeFilter.value = filter;
   page.value = 1;
+  disableShowMore.value = false;
 };
 
 const showMore = () => {
   page.value += 1;
+  if (maxItems.value < PER_PAGE * page.value) {
+    alert("There are no more items to show");
+    disableShowMore.value = true;
+  } else {
+    disableShowMore.value = false;
+  }
 };
 
-const filteredTodos = computed(
-  () =>
-    todos.value
-      ?.filter((todo: Todo) => {
-        if (activeFilter.value === "all") {
-          return true;
-        } else if (activeFilter.value === "completed") {
-          return todo.completed;
-        } else if (activeFilter.value === "uncompleted") {
-          return !todo.completed;
-        }
-      })
-      ?.slice(0, PER_PAGE * page.value) ?? []
-);
+const filteredTodos = computed(() => {
+  let filtered: Todo[] = [];
+
+  if (todos.value) {
+    filtered = todos.value.filter((todo: Todo) => {
+      if (activeFilter.value === "all") {
+        return true;
+      } else if (activeFilter.value === "completed") {
+        return todo.completed;
+      } else if (activeFilter.value === "uncompleted") {
+        return !todo.completed;
+      }
+      return false; // Default case if none of the filters match
+    });
+
+    // Update maxItems.value based on the filtered todos
+    maxItems.value = filtered.length;
+  }
+
+  // Return the filtered todos sliced for pagination
+  return filtered.slice(0, PER_PAGE * page.value) ?? [];
+});
 
 onMounted(() => {
   loadTodos();
@@ -124,6 +143,7 @@ onMounted(() => {
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
+  margin-bottom: 3rem;
   gap: 3rem;
 }
 </style>

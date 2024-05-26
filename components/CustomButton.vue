@@ -1,10 +1,12 @@
 <template>
   <button
     :class="{
-      customButton: true,
-      activeButton: activeButton,
+      'custom-button': true,
+      'active-button': activeButton,
+      'disabled-button': disabled,
     }"
     @click="$emit('click')"
+    :disabled="disabled"
   >
     <slot></slot>
   </button>
@@ -13,13 +15,14 @@
 <script setup lang="ts">
 defineProps<{
   activeButton?: boolean;
+  disabled?: boolean;
 }>();
 
 defineEmits(["click"]);
 </script>
 
 <style scoped lang="scss">
-.customButton {
+.custom-button {
   padding: 1rem 1.5rem;
   min-width: 150px;
   font-size: 1.6rem;
@@ -30,8 +33,13 @@ defineEmits(["click"]);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
-.activeButton {
-  @extend .customButton;
+.active-button {
+  @extend .custom-button;
   background: #52057b;
+}
+.disabled-button {
+  @extend .custom-button;
+  background: #626262;
+  cursor: not-allowed;
 }
 </style>
